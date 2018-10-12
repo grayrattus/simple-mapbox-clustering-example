@@ -109,7 +109,6 @@ var mapModule = (function () {
                             }
 
                             popup.setHTML(propertiesSummarized).addTo(map);
-                            console.log(features);
                         });
                     });
                     initialized = true;
