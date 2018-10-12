@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='style.css' rel='stylesheet'/>
+</head>
+
+<body>
+    <div class="map-container">
+        <div id='map'></div>
+        <div class="legend">
+                <div><span style='background-color: orange'></span>Single feature</div>
+                <div>Clusters:</div>
+                <div><span style='background-color: #51bbd6'></span>Less than 100</div>
+                <div><span style='background-color: #f1f075'></span>Between 100 and 750</div>
+                <div><span style='background-color: #f28cb1'></span>Mote than 750</div>
+        </div>
+    </div>
+    <div id="modal" class="modal">
+    </div>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="modalsModule.js"></script>
+    <script src="mapModule.js"></script>
+    <script src="index.js"></script>
+</body>
