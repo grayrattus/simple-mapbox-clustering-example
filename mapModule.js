@@ -8,6 +8,12 @@ var mapModule = (function () {
         center: [0, 51.5],
         zoom: 8
     });
+    var mapColors = {
+        "single-feature-color" : 'orange',
+        "less-than-color" : '#51bbd6',
+        "between-color" : '#f1f075',
+        "more-than-color" : '#f28cb1'
+    }
 
     var clustersLayer = {
         "id": "clusters",
@@ -18,11 +24,11 @@ var mapModule = (function () {
             "circle-color": [
                 "step",
                 ["get", "point_count"],
-                "#51bbd6",
+                mapColors['less-than-color'],
                 100,
-                "#f1f075",
+                mapColors['between-color'],
                 750,
-                "#f28cb1"
+                mapColors['more-than-color'],
             ],
             "circle-radius": [
                 "step",
@@ -68,6 +74,9 @@ var mapModule = (function () {
 
     return {
         initialize: function (sourceHref) {
+            for (const colorId in mapColors) {
+                document.getElementById(colorId).style = `background-color: ${mapColors[colorId]};`;
+            }
             fetch(sourceHref)
                 .then(response => response.json())
                 .then(data => {
